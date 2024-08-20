@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Fragment: Navbar</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-3" th:fragment="navbar">
+    <div class="container col-md-10">
+        <a class="navbar-brand" th:href="@{/}">
+            <img src="/img/camel-logo-50.png" alt="Logo" width="50" height="50"
+                 class="d-inline-block align-content-center">
+            Desert Travel
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto py-2 text-end">
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/register/manager}">List your property</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/register/customer}">Register</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/login}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                </li>
+                <!-- Admin -->
+                <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link" th:href="@{/admin/dashboard}">Dashboard</a>
+                </li>
+                <!-- Customer -->
+                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
+                    <a class="nav-link" th:href="@{/search}">Search Hotels</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
+                    <a class="nav-link" th:href="@{/customer/bookings}">Bookings</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
+                    <a class="nav-link" th:href="@{/customer/account}">My Account</a>
+                </li>
+                <!-- Hotel Manager -->
+                <li class="nav-item" sec:authorize="hasRole('ROLE_HOTEL_MANAGER')">
+                    <a class="nav-link" th:href="@{/manager/dashboard}">Dashboard</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_HOTEL_MANAGER')">
+                    <a class="nav-link" th:href="@{/manager/account}">My Account</a>
+                </li>
+                <!-- Logout -->
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <div class="d-flex justify-content-end">
+                        <form class="form-inline" method="post" th:action="@{/logout}">
+                            <button class="btn btn-link nav-link" type="submit"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
