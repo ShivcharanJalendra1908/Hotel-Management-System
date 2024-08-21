@@ -50,7 +50,7 @@
                                 <span th:if="${room.roomType.name() == 'DOUBLE'}"><i class="bi-person-fill"></i><i
                                         class="bi-person-fill"></i></span>
                             </td>
-                            <td th:utext="'$ ' + ${#numbers.formatDecimal(room.pricePerNight * durationDays, 0, 'COMMA', 2, 'POINT')}">Price</td>
+                            <td th:utext="'₹ ' + ${#numbers.formatDecimal(room.pricePerNight * durationDays, 0, 'COMMA', 2, 'POINT')}">Price</td>
                             <td>
                                 <select class="form-select room-select"
                                         th:data-duration-price="${room.pricePerNight * durationDays}">
@@ -70,7 +70,7 @@
                             <td th:if="${iterStat.index == 0}" th:attr="rowspan=${#lists.size(hotel.roomDTOs)}">
                                 <div class="mb-2">
                                     <h4><strong>Total:</strong></h4>
-                                    <div id="totalPrice">$0.00</div>
+                                    <div id="totalPrice">₹0.00</div>
                                 </div>
                                 <button class="btn btn-secondary w-100" id="reserve-button" disabled>Reserve</button>
                             </td>
@@ -92,11 +92,11 @@
     <script th:src="@{/js/hotel-map.js}"></script>
     <!-- Initialize the hotel map with hotel address -->
     <script th:inline="javascript">
-        /*<![CDATA[*/
-        document.addEventListener("DOMContentLoaded", function () {
-            initializeHotelMap([[${hotel.addressDTO.addressLine + ', ' + hotel.addressDTO.city + ', ' + hotel.addressDTO.country}]]);
-        });
-        /*]]>*/
+		/*<![CDATA[*/
+		       document.addEventListener("DOMContentLoaded", function () {
+		           initializeHotelMap([[${hotel.addressDTO.addressLine + ', ' + hotel.addressDTO.city + ', ' + hotel.addressDTO.country}]]);
+		       });
+		/*]]>*/
     </script>
     <script>
         $(document).ready(function () {
@@ -112,7 +112,7 @@
 
             // Function to format the price with two decimal places and thousand separators
             function formatPrice(price) {
-                return '$ ' + price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return '₹ ' + price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
 
             // Calculate the total cost

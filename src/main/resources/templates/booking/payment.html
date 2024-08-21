@@ -58,7 +58,7 @@
                 <div class="card mb-2">
                     <div class="card-body">
                         <h4><strong>Total Price:</strong></h4>
-                        <h4 th:utext="'$ ' + ${#numbers.formatDecimal(bookingInitiationDTO.totalPrice, 0, 'COMMA', 2, 'POINT')}">$0.00</h4>
+                        <h4 th:utext="'₹ ' + ${#numbers.formatDecimal(bookingInitiationDTO.totalPrice, 0, 'COMMA', 2, 'POINT')}">₹0.00</h4>
                     </div>
                 </div>
                 <!-- Payment Form -->

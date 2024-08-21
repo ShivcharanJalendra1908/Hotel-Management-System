@@ -69,10 +69,10 @@
                                             <p class="card-text fw-bold">Price per Night</p>
                                             <th:block th:each="room : ${hotel.roomDTOs}">
                                                 <p class="card-text" th:if="${room.roomType.name() == 'SINGLE'}">
-                                                    $ <span th:text="${room.pricePerNight}"></span>
+                                                    ₹ <span th:text="${room.pricePerNight}"></span>
                                                 </p>
                                                 <p class="card-text" th:if="${room.roomType.name() == 'DOUBLE'}">
-                                                    $ <span th:text="${room.pricePerNight}"></span>
+                                                    ₹ <span th:text="${room.pricePerNight}"></span>
                                                 </p>
                                             </th:block>
                                         </div>

@@ -1,7 +1,8 @@
 package com.hotelbookingapp.model.enums;
 
 public enum Currency {
-    USD,
+	RS,
+	USD,
     EUR,
     TRY
 }

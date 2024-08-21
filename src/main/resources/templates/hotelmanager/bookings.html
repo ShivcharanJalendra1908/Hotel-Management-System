@@ -26,7 +26,7 @@
                         <td th:text="${booking.hotelName}"></td>
                         <td th:text="${booking.confirmationNumber}"></td>
                         <td th:text="${booking.customerName}"></td>
-                        <td th:text="'$ ' + ${#numbers.formatDecimal(booking.totalPrice, 0, 'COMMA', 2, 'POINT')}"></td>
+                        <td th:text="'₹ ' + ${#numbers.formatDecimal(booking.totalPrice, 0, 'COMMA', 2, 'POINT')}"></td>
                         <td th:text="${booking.paymentStatus}"></td>
                         <td>
                             <a th:href="@{/manager/bookings/{id}(id=${booking.id})}" class="btn btn-primary btn-sm">Details</a>
