@@ -1,6 +1,6 @@
-# HotelBookingApp
+# HotelBookingApplication
 
-`HotelBookingApp` is a minimalistic web application designed to simplify the hotel reservation process for both customers and hotel managers. It is crafted with Java and Spring Boot in backend, and Thymeleaf in frontend. The system adheres to the Model-View-Controller (MVC) architectural pattern.
+`HotelBookingApplication` is a minimalistic web application designed to simplify the hotel reservation process for both customers and hotel managers. It is crafted with Java and Spring Boot in backend, and Thymeleaf in frontend. The system adheres to the Model-View-Controller (MVC) architectural pattern.
 
 ## Features
 
