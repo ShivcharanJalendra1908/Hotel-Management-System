@@ -46,10 +46,10 @@
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/kayaalpkoker/HotelBookingApp.git
+   git clone https://github.com/ShivcharanJalendra1908/Hotel-Management-System.git
    ```
    
-2. Navigate to the project directory::
+2. Navigate to the project directory:
    ```sh
    cd HotelBookingApp
    ```
@@ -69,8 +69,6 @@
 7. Access the application via your browser at http://localhost:8080/.
 
 ## Screenshots
-
-tbd
 
 ## Contribution
 
